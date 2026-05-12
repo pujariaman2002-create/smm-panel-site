@@ -28,6 +28,22 @@ import {
 
 const firebaseConfig = {
   apiKey: "AIzaSyB0_ryzoYDnhsBPKlj_ojTzp6kg1397tkI",
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+import {
+  addDoc,
+  collection,
+  getFirestore,
+  serverTimestamp,
+} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIza....",
   authDomain: "ssm-panel-aman.firebaseapp.com",
   projectId: "ssm-panel-aman",
   storageBucket: "ssm-panel-aman.firebasestorage.app",
