@@ -13,14 +13,14 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_FIREBASE_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
-};
-
+  apiKey: "AIza....",
+  authDomain: "ssm-panel-aman.firebaseapp.com",
+  projectId: "ssm-panel-aman",
+  storageBucket: "ssm-panel-aman.firebasestorage.app",
+  messagingSenderId: "359952483324",
+  appId: "1:359952483324:web:cac4405ef713c1a9fa2879",
+  measurementId: "G-HCS1ETBFE7"
+}:
 const firebaseReady = !Object.values(firebaseConfig).some((value) => value.startsWith("YOUR_"));
 const app = firebaseReady ? initializeApp(firebaseConfig) : null;
 const auth = firebaseReady ? getAuth(app) : null;
