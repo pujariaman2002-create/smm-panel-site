@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NovaBoost V2 is a premium dark glassmorphism SMM panel with Firebase auth, wallet recharge, UPI payments, order tracking, charts, and admin user management."
+    />
+    <title>NovaBoost V2 | Firebase SMM Panel</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="loader" id="loader" aria-live="polite">
+      <div class="loader-orb"></div>
+      <p>Launching NovaBoost V2</p>
+    </div>
+
+    <div class="aurora aurora-one"></div>
+    <div class="aurora aurora-two"></div>
+    <div class="aurora aurora-three"></div>
+    <div class="noise"></div>
+
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="NovaBoost home">
+          <span class="brand-mark">N</span>
+          <span>NovaBoost <em>V2</em></span>
+        </a>
+        <button class="mobile-menu" type="button" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
+          <a href="#services">Services</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="#wallet">Wallet</a>
+          <a href="#tracking">Tracking</a>
+          <a href="#admin">Admin</a>
+        </div>
+        <div class="nav-actions">
+          <span class="session-pill" id="sessionPill">Not signed in</span>
+          <button class="ghost-btn" type="button" data-auth-jump="login">Login</button>
+          <button class="primary-btn" type="button" data-auth-jump="signup">Signup</button>
+          <button class="danger-btn hidden" type="button" id="logoutBtn">Logout</button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero section-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Premium Firebase SMM panel</p>
+          <h1>Neon-fast growth tools for Instagram, YouTube, apps, and UPI wallet recharge.</h1>
+          <p class="hero-text">
+            Version 2 adds real Firebase login/signup, Firestore-backed wallets, admin approvals, live order tracking, charts, smooth loading effects, and a mobile-first glassmorphism UI.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-btn large pulse" href="#account">Create Firebase Account</a>
+            <a class="secondary-btn large" href="#dashboard">Open Dashboard</a>
+          </div>
+          <div class="trust-row" aria-label="Platform metrics">
+            <span><strong>Live</strong> Firebase Auth</span>
+            <span><strong>UPI</strong> Aman7015@fam</span>
+            <span><strong>Admin</strong> approvals</span>
+          </div>
+        </div>
+        <div class="hero-card reveal delay-1" aria-label="Campaign overview preview">
+          <div class="card-topline">
+            <span class="status-dot"></span>
+            <span>Realtime Performance</span>
+          </div>
+          <canvas id="heroChart" width="520" height="280" aria-label="Realtime performance chart"></canvas>
+          <div class="stats-grid">
+            <article><span>Wallet Ready</span><strong id="heroWallet">₹0</strong><small>Firestore synced</small></article>
+            <article><span>Orders</span><strong id="heroOrders">0</strong><small>Live tracking</small></article>
+            <article><span>Pending</span><strong id="heroPending">0</strong><small>Admin queue</small></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="auth-panel reveal" id="account">
+        <div>
+          <p class="eyebrow">Firebase login/signup</p>
+          <h2>Secure access powered by the provided Firebase project.</h2>
+          <p>New users are created in Firebase Authentication and mirrored into a Firestore <code>users</code> document for wallet balance, role, and admin management.</p>
+        </div>
+        <form class="auth-form" id="authForm">
+          <div class="toggle-tabs" role="tablist" aria-label="Authentication mode">
+            <button class="tab active" type="button" data-auth-mode="login">Login</button>
+            <button class="tab" type="button" data-auth-mode="signup">Signup</button>
+          </div>
+          <label>
+            Full name
+            <input type="text" id="authName" placeholder="Your name" autocomplete="name" />
+          </label>
+          <label>
+            Email
+            <input type="email" id="authEmail" placeholder="you@example.com" autocomplete="email" required />
+          </label>
+          <label>
+            Password
+            <input type="password" id="authPassword" placeholder="Minimum 6 characters" minlength="6" autocomplete="current-password" required />
+          </label>
+          <button class="primary-btn full" type="submit" id="authSubmit">Login</button>
+          <p class="form-note" id="authMessage">Use Firebase Email/Password auth. Enable it in the Firebase console before production.</p>
+        </form>
+      </section>
+
+      <section class="section-heading reveal" id="services">
+        <p class="eyebrow">Promotion services</p>
+        <h2>Instagram, YouTube, and premium subscriptions with wallet billing.</h2>
+      </section>
+
+      <section class="service-grid">
+        <article class="service-card instagram reveal">
+          <div class="icon-pill">◎</div>
+          <h3>Instagram Promotion</h3>
+          <p>Followers, likes, reels views, story impressions, comments, saves, and profile visits with smart drip delivery.</p>
+          <ul><li>Auto-cost estimate</li><li>Order status tracking</li><li>Progress chart updates</li></ul>
+          <button class="secondary-btn" type="button" data-order-service="Instagram Growth Pack">Order Instagram</button>
+        </article>
+        <article class="service-card youtube reveal delay-1">
+          <div class="icon-pill">▶</div>
+          <h3>YouTube Promotion</h3>
+          <p>Views, subscribers, watch time, shorts engagement, comments, and channel momentum from one dashboard.</p>
+          <ul><li>URL-based campaign orders</li><li>Queued/running/delivered flow</li><li>Admin moderation ready</li></ul>
+          <button class="secondary-btn" type="button" data-order-service="YouTube Views Pack">Order YouTube</button>
+        </article>
+      </section>
+
+      <section class="premium-apps reveal" id="apps">
+        <div>
+          <p class="eyebrow">Premium apps</p>
+          <h2>Subscription products for recurring digital requests.</h2>
+          <p>Sell OTT, design, VPN, productivity, and AI app subscriptions as wallet-funded orders with admin fulfillment tracking.</p>
+        </div>
+        <div class="app-cards">
+          <button type="button" data-order-service="OTT Premium Subscription"><span>🎬</span><strong>OTT Pass</strong><small>From ₹99/mo</small></button>
+          <button type="button" data-order-service="Design Suite Subscription"><span>🎨</span><strong>Design Suite</strong><small>From ₹149/mo</small></button>
+          <button type="button" data-order-service="AI Tools Subscription"><span>🤖</span><strong>AI Tools</strong><small>From ₹199/mo</small></button>
+          <button type="button" data-order-service="VPN Pro Subscription"><span>🛡️</span><strong>VPN Pro</strong><small>From ₹79/mo</small></button>
+        </div>
+      </section>
+
+      <section class="dashboard-shell" id="dashboard">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Realtime dashboard</p>
+          <h2>Live wallet, orders, recharge requests, and charts.</h2>
+        </div>
+        <div class="dashboard-grid reveal">
+          <aside class="sidebar-card">
+            <div class="user-mini">
+              <span class="avatar" id="avatarInitials">NB</span>
+              <div>
+                <strong id="userEmail">guest@novaboost.app</strong>
+                <small id="userRole">Login to sync your account</small>
+              </div>
+            </div>
+            <a class="active" href="#overview">Overview</a>
+            <a href="#new-order">New Order</a>
+            <a href="#wallet">Wallet Recharge</a>
+            <a href="#tracking">Order Tracking</a>
+            <a href="#admin">Admin Panel</a>
+          </aside>
+          <div class="dashboard-content">
+            <div class="dashboard-metrics" id="overview">
+              <article><span>Wallet Balance</span><strong id="walletBalance">₹0</strong></article>
+              <article><span>Total Orders</span><strong id="totalOrders">0</strong></article>
+              <article><span>Running</span><strong id="runningOrders">0</strong></article>
+              <article><span>Recharge Queue</span><strong id="pendingRecharges">0</strong></article>
+            </div>
+            <div class="charts-grid">
+              <article class="chart-card"><h3>Order Progress</h3><canvas id="ordersChart" width="520" height="260"></canvas></article>
+              <article class="chart-card"><h3>Wallet Activity</h3><canvas id="walletChart" width="520" height="260"></canvas></article>
+            </div>
+            <div class="order-panel" id="new-order">
+              <div>
+                <h3>Create promotion order</h3>
+                <p>Orders deduct wallet balance and create a Firestore tracking record.</p>
+              </div>
+              <form id="orderForm">
+                <label>Service<select id="serviceSelect"><option>Instagram Growth Pack</option><option>Instagram Reels Views</option><option>YouTube Views Pack</option><option>YouTube Subscribers</option><option>OTT Premium Subscription</option><option>AI Tools Subscription</option></select></label>
+                <label>Link / Account<input id="orderLink" type="url" placeholder="https://social.app/profile" required /></label>
+                <label>Quantity<input id="orderQuantity" type="number" min="1" step="50" value="500" required /></label>
+                <label>Estimated charge<input id="orderCharge" type="text" value="₹340" readonly /></label>
+                <button class="primary-btn full" type="submit">Place Order</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wallet-section reveal" id="wallet">
+        <div class="wallet-copy">
+          <p class="eyebrow">Real wallet recharge request</p>
+          <h2>Pay with UPI, submit UTR, and wait for admin approval.</h2>
+          <p>The wallet balance is only credited when an admin approves the Firestore recharge request. UPI payments are sent to <strong>Aman7015@fam</strong>.</p>
+          <form class="wallet-form" id="walletForm">
+            <label>Recharge amount<input id="rechargeAmount" type="number" min="10" value="500" required /></label>
+            <label>UTR / Reference ID<input id="utrId" type="text" placeholder="Enter after payment" required /></label>
+            <div class="quick-amounts">
+              <button type="button" data-amount="250">₹250</button><button type="button" data-amount="500">₹500</button><button type="button" data-amount="1000">₹1000</button><button type="button" data-amount="2500">₹2500</button>
+            </div>
+            <div class="split-actions">
+              <a class="secondary-btn full" id="upiPayLink" href="upi://pay?pa=Aman7015@fam&pn=NovaBoost&am=500&cu=INR">Open UPI App</a>
+              <button class="primary-btn full" type="submit">Submit UTR</button>
+            </div>
+          </form>
+        </div>
+        <div class="upi-card" aria-label="UPI payment card">
+          <span class="upi-label">Merchant UPI ID</span>
+          <strong id="upiId">Aman7015@fam</strong>
+          <div class="qr-box" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <small>Payment verification requires admin approval in the panel.</small>
+        </div>
+      </section>
+
+      <section class="tracking-section reveal" id="tracking">
+        <div class="table-card">
+          <div class="table-head"><h3>Order tracking</h3><span id="orderSyncStatus">Waiting for login</span></div>
+          <div class="responsive-table">
+            <table>
+              <thead><tr><th>ID</th><th>Service</th><th>Status</th><th>Progress</th><th>Charge</th><th>Created</th></tr></thead>
+              <tbody id="ordersTable"><tr><td colspan="6">Login to view live orders.</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="table-card">
+          <div class="table-head"><h3>Recharge tracking</h3><span>Admin-approved crediting</span></div>
+          <div class="responsive-table">
+            <table>
+              <thead><tr><th>Amount</th><th>UTR</th><th>Status</th><th>Submitted</th></tr></thead>
+              <tbody id="rechargesTable"><tr><td colspan="4">Login to view recharge requests.</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="admin-panel reveal" id="admin">
+        <div class="section-heading compact">
+          <p class="eyebrow">Admin panel</p>
+          <h2>User management, recharge approval, and order moderation.</h2>
+          <p id="adminNotice">Login as an admin user to unlock management controls. Set your Firestore user document role to <code>admin</code>.</p>
+        </div>
+        <div class="admin-grid">
+          <article><span>Total Users</span><strong id="adminUsersCount">0</strong></article>
+          <article><span>Pending Recharges</span><strong id="adminRechargeCount">0</strong></article>
+          <article><span>Open Orders</span><strong id="adminOrderCount">0</strong></article>
+          <article><span>Revenue</span><strong id="adminRevenue">₹0</strong></article>
+        </div>
+        <div class="admin-tables locked" id="adminTables">
+          <div class="table-card">
+            <div class="table-head"><h3>User management</h3><span>Firestore users</span></div>
+            <div class="responsive-table"><table><thead><tr><th>User</th><th>Role</th><th>Status</th><th>Wallet</th><th>Actions</th></tr></thead><tbody id="usersTable"><tr><td colspan="5">Admin access required.</td></tr></tbody></table></div>
+          </div>
+          <div class="table-card">
+            <div class="table-head"><h3>Recharge approvals</h3><span>Approve to credit wallet</span></div>
+            <div class="responsive-table"><table><thead><tr><th>User</th><th>Amount</th><th>UTR</th><th>Status</th><th>Actions</th></tr></thead><tbody id="adminRechargesTable"><tr><td colspan="5">Admin access required.</td></tr></tbody></table></div>
+          </div>
+          <div class="table-card wide-table">
+            <div class="table-head"><h3>Order moderation</h3><span>Update tracking status</span></div>
+            <div class="responsive-table"><table><thead><tr><th>ID</th><th>User</th><th>Service</th><th>Status</th><th>Progress</th><th>Actions</th></tr></thead><tbody id="adminOrdersTable"><tr><td colspan="6">Admin access required.</td></tr></tbody></table></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <footer class="site-footer">
+      <p>© 2026 NovaBoost V2. Firebase SMM dashboard prototype.</p>
+      <div><a href="#home">Home</a><a href="#wallet">Wallet</a><a href="#admin">Admin</a></div>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
