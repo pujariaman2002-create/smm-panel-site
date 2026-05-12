@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PulsePanel — Modern SMM Panel</title>
+    <meta
+      name="description"
+      content="A dark-theme SMM panel with Instagram, YouTube, premium apps, wallet recharge, UPI payment, Firebase auth, dashboard, and admin tools."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#hero" aria-label="PulsePanel home">
+        <span class="brand-mark">P</span>
+        <span>PulsePanel</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#apps">Premium Apps</a>
+        <a href="#wallet">Wallet</a>
+        <a href="#admin">Admin</a>
+        <a class="nav-cta" href="#auth">Login</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section" id="hero">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Next-gen social growth platform</span>
+          <h1>Scale Instagram & YouTube campaigns from one premium dark dashboard.</h1>
+          <p>
+            Launch promotion orders, recharge with UPI, track wallet activity, manage premium app
+            subscriptions, and monitor users with Firebase-powered authentication.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#auth">Start now</a>
+            <a class="btn btn-ghost" href="#dashboard">View dashboard</a>
+          </div>
+          <div class="hero-stats" aria-label="Platform statistics">
+            <div><strong>24/7</strong><span>Instant panel</span></div>
+            <div><strong>99.9%</strong><span>Uptime focus</span></div>
+            <div><strong>UPI</strong><span>Fast recharge</span></div>
+          </div>
+        </div>
+
+        <aside class="hero-card reveal" aria-label="Campaign preview">
+          <div class="card-header">
+            <span class="status-dot"></span>
+            <span>Live order console</span>
+          </div>
+          <div class="growth-ring">
+            <div>
+              <strong>82%</strong>
+              <span>Campaign boost</span>
+            </div>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-card instagram">
+              <span>Instagram</span>
+              <strong>12.8K</strong>
+              <small>Followers queued</small>
+            </div>
+            <div class="mini-card youtube">
+              <span>YouTube</span>
+              <strong>38K</strong>
+              <small>Views processing</small>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="auth-panel section reveal" id="auth">
+        <div class="section-heading">
+          <span class="eyebrow">Firebase authentication</span>
+          <h2>Login or create your growth account</h2>
+          <p>Use the demo controls now, then add your Firebase project config in app.js.</p>
+        </div>
+        <div class="auth-shell">
+          <div class="tabs" role="tablist" aria-label="Authentication tabs">
+            <button class="tab active" data-auth-tab="login" type="button">Login</button>
+            <button class="tab" data-auth-tab="signup" type="button">Signup</button>
+          </div>
+          <form class="auth-form active" id="loginForm" data-auth-form="login">
+            <label>Email<input type="email" name="email" placeholder="user@pulsepanel.app" required /></label>
+            <label>Password<input type="password" name="password" placeholder="••••••••" required /></label>
+            <button class="btn btn-primary" type="submit">Login with Firebase</button>
+          </form>
+          <form class="auth-form" id="signupForm" data-auth-form="signup">
+            <label>Name<input type="text" name="name" placeholder="Your name" required /></label>
+            <label>Email<input type="email" name="email" placeholder="you@example.com" required /></label>
+            <label>Password<input type="password" name="password" placeholder="Create password" required /></label>
+            <button class="btn btn-primary" type="submit">Create account</button>
+          </form>
+          <p class="form-message" id="authMessage" role="status"></p>
+        </div>
+      </section>
+
+      <section class="dashboard section reveal" id="dashboard">
+        <div class="section-heading left">
+          <span class="eyebrow">User dashboard</span>
+          <h2>Everything users need after login</h2>
+        </div>
+        <div class="dashboard-grid">
+          <article class="stat-card"><span>Wallet Balance</span><strong id="walletBalance">₹2,450</strong><small>Ready for new orders</small></article>
+          <article class="stat-card"><span>Active Orders</span><strong>18</strong><small>6 Instagram · 12 YouTube</small></article>
+          <article class="stat-card"><span>Premium Apps</span><strong>4</strong><small>Subscriptions active</small></article>
+          <article class="stat-card"><span>Support SLA</span><strong>12m</strong><small>Average response</small></article>
+        </div>
+        <div class="activity-card">
+          <div class="card-title-row"><h3>Recent activity</h3><button class="soft-btn" type="button">Export</button></div>
+          <div class="activity-list" id="activityList"></div>
+        </div>
+      </section>
+
+      <section class="services section" id="services">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Promotion marketplace</span>
+          <h2>Instagram and YouTube services</h2>
+          <p>Choose a package, enter the target URL, and the dashboard calculates totals instantly.</p>
+        </div>
+        <div class="service-layout">
+          <div class="service-cards reveal">
+            <article class="service-card instagram-card">
+              <div class="service-icon">◎</div>
+              <h3>Instagram Growth</h3>
+              <p>Followers, likes, reels views, comments, saves, and story reach for creators and brands.</p>
+              <ul><li>Real-time status</li><li>Drip-feed friendly</li><li>Geo-ready packages</li></ul>
+            </article>
+            <article class="service-card youtube-card">
+              <div class="service-icon">▶</div>
+              <h3>YouTube Promotion</h3>
+              <p>Views, subscribers, likes, watch time, shorts boosts, and channel launch campaigns.</p>
+              <ul><li>Retention options</li><li>Channel analytics</li><li>Fast refill support</li></ul>
+            </article>
+          </div>
+          <form class="order-card reveal" id="orderForm">
+            <h3>Place order</h3>
+            <label>Platform
+              <select name="platform" id="platformSelect">
+                <option value="instagram">Instagram</option>
+                <option value="youtube">YouTube</option>
+              </select>
+            </label>
+            <label>Service
+              <select name="service" id="serviceSelect"></select>
+            </label>
+            <label>Target URL<input type="url" name="target" placeholder="https://..." required /></label>
+            <label>Quantity<input type="number" name="quantity" id="quantityInput" min="100" step="100" value="1000" /></label>
+            <div class="order-total"><span>Estimated total</span><strong id="orderTotal">₹0</strong></div>
+            <button class="btn btn-primary" type="submit">Submit order</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="apps section reveal" id="apps">
+        <div class="section-heading">
+          <span class="eyebrow">Premium apps</span>
+          <h2>Subscription bundles for power users</h2>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card"><span>Creator Suite</span><strong>₹299/mo</strong><p>Canva Pro style assets, hashtag lab, and caption AI workspace.</p><button class="soft-btn" type="button">Subscribe</button></article>
+          <article class="price-card featured"><span>Growth Pro</span><strong>₹699/mo</strong><p>Analytics vault, scheduler, competitor tracking, and campaign templates.</p><button class="btn btn-primary" type="button">Go premium</button></article>
+          <article class="price-card"><span>Agency Stack</span><strong>₹1,499/mo</strong><p>White-label reports, team seats, bulk ordering, and priority support.</p><button class="soft-btn" type="button">Subscribe</button></article>
+        </div>
+      </section>
+
+      <section class="wallet section" id="wallet">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Wallet recharge</span>
+          <h2>UPI payment integration</h2>
+          <p>Generate a UPI intent link for fast wallet top-ups and mirror the request in Firebase.</p>
+        </div>
+        <div class="wallet-grid">
+          <form class="recharge-card reveal" id="rechargeForm">
+            <h3>Recharge wallet</h3>
+            <label>Amount (INR)<input type="number" id="rechargeAmount" min="50" step="50" value="500" /></label>
+            <label>UPI ID<input type="text" id="upiId" value="merchant@upi" /></label>
+            <button class="btn btn-primary" type="submit">Generate UPI payment</button>
+          </form>
+          <div class="upi-card reveal">
+            <div class="upi-qr" id="upiQr">UPI</div>
+            <h3>Payment request</h3>
+            <p id="upiSummary">Enter amount and generate a UPI link.</p>
+            <a class="btn btn-ghost disabled" id="upiLink" href="#" target="_blank" rel="noreferrer">Open UPI app</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="admin section reveal" id="admin">
+        <div class="section-heading left">
+          <span class="eyebrow">Admin panel</span>
+          <h2>Manage users, orders, and recharge requests</h2>
+        </div>
+        <div class="admin-layout">
+          <aside class="admin-menu">
+            <button class="active" type="button">Overview</button>
+            <button type="button">Users</button>
+            <button type="button">Orders</button>
+            <button type="button">Payments</button>
+          </aside>
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead><tr><th>User</th><th>Type</th><th>Status</th><th>Value</th></tr></thead>
+              <tbody id="adminRows"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 PulsePanel. Built with HTML, CSS, JavaScript, and Firebase-ready integrations.</p>
+      <a href="#hero">Back to top ↑</a>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
