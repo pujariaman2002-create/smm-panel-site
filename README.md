@@ -1,30 +1,42 @@
-# PulsePanel SMM Panel Site
+# NovaBoost V2 SMM Panel Site
 
-A modern dark-theme SMM panel landing page and dashboard prototype built with HTML, CSS, JavaScript, and Firebase-ready integrations.
+A premium dark glassmorphism SMM panel prototype built with plain HTML, CSS, JavaScript, and Firebase. Version 2 uses the provided Firebase project configuration and UPI ID for a working browser-based demo.
 
-## Features
+## Version 2 features
 
-- Firebase-ready login and signup forms
-- User dashboard with wallet, orders, apps, and activity metrics
-- Instagram and YouTube promotion services with live order pricing
-- Premium apps subscription cards
-- Wallet recharge system with generated UPI payment intent links
-- Admin panel for users, orders, subscriptions, and recharge requests
-- Responsive mobile navigation and layouts
-- Animated hero, glassmorphism cards, reveal-on-scroll effects, and dark neon styling
+- Firebase Email/Password login and signup using the `ssm-panel-aman` Firebase app.
+- Firestore-backed user profiles with role, status, wallet balance, total orders, and total spend.
+- Real wallet recharge request flow: users pay `Aman7015@fam`, submit UTR/reference ID, and admins approve before balance is credited.
+- User dashboard with live order tracking, recharge tracking, wallet balance, metrics, and canvas charts.
+- Admin panel for Firestore user management, account blocking/unblocking, role changes, recharge approval/rejection, and order status updates.
+- Instagram, YouTube, and premium app subscription order flows with wallet deduction.
+- Neon animations, smooth loading overlay, stronger hover effects, and mobile-optimized layouts.
+- Faster front-end performance by avoiding framework dependencies and using native browser APIs.
 
 ## Firebase setup
 
-1. Create a Firebase project.
-2. Enable Email/Password authentication.
-3. Create Firestore collections named `users`, `orders`, and `recharges`.
-4. Replace the placeholder `firebaseConfig` values in `app.js` with your project credentials.
-5. Serve the site from a local web server or your hosting provider.
+1. Enable Email/Password Authentication in the Firebase console.
+2. Create Firestore in production or test mode.
+3. Publish the starter rules from `firestore.rules`.
+4. Create your first user through the site signup form.
+5. In Firestore, edit that user's `users/{uid}` document and set `role` to `admin` to unlock the admin panel.
 
-## Local preview
+## Collections used
+
+- `users`: user profile, role, status, wallet, total order stats.
+- `orders`: order ID, user, service, link, quantity, charge, status, progress.
+- `recharges`: user, amount, UPI ID, UTR/reference ID, approval status.
+
+## Run locally
+
+Serve the folder with any static server:
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 4173
 ```
 
-Then open `http://localhost:8000` in a browser.
+Then open <http://localhost:4173>.
+
+## Notes
+
+Client-only wallet deduction is suitable for a front-end prototype. For production money movement, move wallet debits/credits and payment verification to trusted backend code such as Firebase Cloud Functions.
