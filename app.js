@@ -742,3 +742,6 @@ buildUpiLink();
 calculateOrderCharge();
 bindEvents();
 drawCharts();
+window.setTimeout(() => {
+  document.getElementById("loader").classList.add("hidden");
+}, 500);
